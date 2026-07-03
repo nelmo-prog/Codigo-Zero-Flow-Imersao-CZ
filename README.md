@@ -1,6 +1,6 @@
-# Código ZERO Skills
+# Código ZERO Flow, Imersão CZ
 
-**11 equipes de IA com 30+ agentes especializados. 1 comando pra instalar. Sua máquina de vendas construída em 2 dias.**
+**Equipes de IA com 30+ agentes especializados. 1 comando pra instalar. Sua máquina de vendas construída em 2 dias.**
 
 Skills oficiais da Imersão Código ZERO, de autoria de [Nelmo Ricalde](https://nelmoricalde.com.br).
 
@@ -11,20 +11,20 @@ Skills oficiais da Imersão Código ZERO, de autoria de [Nelmo Ricalde](https://
 ### Mac / Linux
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/nelmo-prog/codigo-zero-skills/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ/master/install.sh | bash
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-iwr -useb https://raw.githubusercontent.com/nelmo-prog/codigo-zero-skills/main/install.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ/master/install.ps1 | iex
 ```
 
 ### Manual (qualquer sistema)
 
 ```bash
-git clone https://github.com/nelmo-prog/codigo-zero-skills.git
-cd codigo-zero-skills
+git clone https://github.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ.git
+cd Codigo-Zero-Flow-Imersao-CZ
 node install.js
 ```
 
@@ -38,85 +38,41 @@ node install.js
 
 ---
 
-## 🎯 O que está incluído
+## 🎯 Como funciona
 
-### Fluxo Canônico Código ZERO, 11 fases
-
-```
-FASE 0.  DNA do Expert       → /user-dna:create
-FASE 1.  Mercado (L.U.C.R.O.) → /lucro:diagnose
-FASE 2.  Avatar              → /avatar-ultra-profundo:create
-FASE 3.  Produto ELITE       → /produto-uau:create
-FASE 4.  Oferta S.C.A.L.E.   → /offer-creator
-FASE 5.  Criativos           → /creative-squad
-FASE 6.  LP / Página         → /design-squad + /copy-squad
-FASE 7.  Meta Ads            → /squad-ads
-FASE 8.  Google Ads          → /squad-google-ads
-FASE 9.  Plano 30 Dias       → /plano-30-dias:create
-FASE 10. Bastidores          → ao vivo na imersão
-```
-
-### Orquestrador
+Um único comando orquestra toda a jornada:
 
 ```
-/codigo-zero-flow → guia automático pelas 11 fases
+/codigo-zero-flow
 ```
 
----
+Seu negócio é construído numa jornada de fases sequenciais, sempre na mesma ordem: começa pelo SEU DNA de expert e termina com a máquina de vendas rodando. Cada fase alimenta a próxima (cadeia alimentar de entregáveis) e nenhuma pode ser pulada.
 
-## 🧠 Cadeia alimentar
+Durante a imersão, as fases são liberadas AO VIVO pelo Nelmo, com código de liberação anunciado na hora certa. No encerramento, o código do modo livre destrava tudo pra você continuar em casa.
 
-Cada fase alimenta a próxima. O Código Genético do Expert (Fase 0) é a raiz. Sem ele, tudo é genérico. Com ele, tudo é calibrado ao seu tom de voz, história e autoridade.
-
-```
-DNA do Expert → Mercado → Avatar → Produto → Oferta
-                              ↓
-                          Criativos → LP → Meta Ads + Google Ads → Plano 30 Dias
-```
-
-**Regra:** squads downstream CONSOMEM outputs upstream. Nunca regeneram o que já foi gerado com profundidade.
+**Regra mestra:** squads downstream CONSOMEM os outputs upstream. Nunca regeneram o que já foi gerado com profundidade.
 
 ---
 
 ## 📖 Como usar (depois de instalar)
 
 1. **Reinicie o Claude Code**
-2. Digite `/codigo-zero-flow init meu-projeto`
-3. Siga as fases na ordem
-4. A cada fase, outputs ficam em `lancamentos/{projeto}/`
+2. Digite `/codigo-zero-flow init meu-projeto` (troque pelo nome do seu negócio)
+3. Siga a jornada, o orquestrador cuida da ordem, dos arquivos e da estrutura
+4. Os entregáveis de cada fase ficam em `lancamentos/{projeto}/` na sua pasta de usuário
 
 ---
 
 ## 🏗️ Estrutura do repositório
 
 ```
-codigo-zero-skills/
+Codigo-Zero-Flow-Imersao-CZ/
 ├── install.js              # Instalador universal (Node)
 ├── install.sh              # Instalador Mac/Linux
 ├── install.ps1             # Instalador Windows
-├── skills/                 # SKILL.md de cada skill
-│   ├── user-dna/
-│   ├── avatar-ultra-profundo/
-│   ├── produto-uau/
-│   ├── offer-creator/
-│   ├── creative-squad/
-│   ├── copy-squad/
-│   ├── design-squad/
-│   ├── squad-ads/
-│   ├── squad-google-ads/
-│   └── codigo-zero-flow/
+├── skills/                 # SKILL.md de cada equipe de IA
 ├── commands/               # Slash commands (.md)
-│   ├── user-dna/create.md
-│   ├── avatar-ultra-profundo/
-│   ├── produto-uau/
-│   ├── copy-squad/
-│   ├── design-squad/
-│   └── codigo-zero-flow.md
-└── squads/                 # Implementação detalhada dos squads
-    ├── avatar-ultra-profundo/
-    ├── produto-uau/
-    └── user-dna/
-        └── knowledge/       # 8 módulos base de conhecimento
+└── squads/                 # Agentes especializados (instalados em ~/.claude/squads/codigo-zero/)
 ```
 
 ---
@@ -124,7 +80,7 @@ codigo-zero-skills/
 ## 🆘 Suporte
 
 - **Alunos da imersão:** grupo Telegram oficial
-- **Issues técnicas:** https://github.com/nelmo-prog/codigo-zero-skills/issues
+- **Issues técnicas:** https://github.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ/issues
 
 ---
 
@@ -138,8 +94,7 @@ MIT. Pode usar em projetos próprios, com clientes, comerciais. Use com responsa
 
 Nelmo Ricalde, Cachoeirinha/RS
 - Site: https://nelmoricalde.com.br
-- Imersão Código ZERO: https://lp.nelmoricalde.com.br/codigo-zero/
-- Agência Zuvora: https://zuvora.com.br
+- A Nova Inteligência: https://anovainteligencia.ia.br
 
 ---
 

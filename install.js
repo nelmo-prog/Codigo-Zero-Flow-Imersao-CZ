@@ -9,7 +9,8 @@
  *   1. Detecta pasta ~/.claude/ (Mac/Linux/Windows)
  *   2. Copia skills/ → ~/.claude/skills/
  *   3. Copia commands/ → ~/.claude/commands/
- *   4. Mostra resumo do que foi instalado
+ *   4. Copia squads/ → ~/.claude/squads/codigo-zero/ (agentes dos squads)
+ *   5. Mostra resumo do que foi instalado
  */
 
 const fs = require('fs');
@@ -19,10 +20,12 @@ const os = require('os');
 const CLAUDE_DIR = path.join(os.homedir(), '.claude');
 const SKILLS_DIR = path.join(CLAUDE_DIR, 'skills');
 const COMMANDS_DIR = path.join(CLAUDE_DIR, 'commands');
+const SQUADS_DIR = path.join(CLAUDE_DIR, 'squads', 'codigo-zero');
 
 const REPO_ROOT = __dirname;
 const SOURCE_SKILLS = path.join(REPO_ROOT, 'skills');
 const SOURCE_COMMANDS = path.join(REPO_ROOT, 'commands');
+const SOURCE_SQUADS = path.join(REPO_ROOT, 'squads');
 
 function log(msg, color = '') {
   const colors = {
@@ -85,9 +88,23 @@ function main() {
     }
   }
 
+  log('\nInstalando squads (agentes)...', 'yellow');
+  let squadCount = 0;
+  if (fs.existsSync(SOURCE_SQUADS)) {
+    for (const squad of fs.readdirSync(SOURCE_SQUADS)) {
+      const src = path.join(SOURCE_SQUADS, squad);
+      const dest = path.join(SQUADS_DIR, squad);
+      if (copyRecursive(src, dest)) {
+        log(`  OK ${squad}`, 'green');
+        squadCount++;
+      }
+    }
+  }
+
   log('\n=== INSTALAÇÃO CONCLUÍDA ===', 'blue');
   log(`${skillCount} skills instaladas`, 'green');
   log(`${cmdCount} comandos instalados`, 'green');
+  log(`${squadCount} squads de agentes instalados`, 'green');
   log('\nProximo passo:', 'yellow');
   log('  1. Reinicie o Claude Code');
   log('  2. Digite /codigo-zero-flow pra começar');

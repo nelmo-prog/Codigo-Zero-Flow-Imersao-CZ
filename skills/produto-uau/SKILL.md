@@ -58,4 +58,4 @@ Este squad faz só PRODUTO. S.C.A.L.E. faz OFERTA.
 **Fase 3 de 9** (depois de Avatar Ultra Profundo, antes de S.C.A.L.E./Oferta)
 
 ## Referência
-Implementação completa em `C:\Users\Ryzen 7\nelmo-workspace-projetos-claude-code\21-Flow-Imersao-Codigo-Zero\squads\produto-uau\`
+Implementação completa em `~/.claude/squads/codigo-zero/produto-uau\`

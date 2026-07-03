@@ -1,0 +1,70 @@
+{
+  "id": "evt_qeex3dr8qeeuvnefrl8vezeev",
+  "event": "myeduzz.invoice_opened",
+  "sentDate": "2026-04-07T01:45:02.000Z",
+  "data": {
+    "id": "98623441",
+    "status": "open",
+    "buyer": {
+      "id": "23663110",
+      "name": "Nelmo Ricalde Five",
+      "document": "60891050078",
+      "email": "nelmo@ecommercecincopontozero.com.br",
+      "phone": null,
+      "phone2": null,
+      "cellphone": "+5511981441144",
+      "address": {
+        "street": "Rua Cláudio Fagundes dos Santos",
+        "number": "44",
+        "neighborhood": "Parque da Matriz",
+        "complement": null,
+        "city": "Cachoeirinha",
+        "state": "RS",
+        "country": "BR",
+        "zipCode": "94950835"
+      }
+    },
+    "producer": {
+      "id": "73172028",
+      "name": "Nelmo Ricalde",
+      "email": "nelmo@ecommercecincopontozero.com.br"
+    },
+    "offer": { "name": null },
+    "utm": null,
+    "createdAt": "2026-04-07T01:45:02.000Z",
+    "dueDate": "2026-04-09T01:45:02.000Z",
+    "price": {
+      "currency": "BRL",
+      "value": 414
+    },
+    "orderBump": {
+      "has": false,
+      "isMainSale": false,
+      "mainSaleId": null
+    },
+    "installments": 1,
+    "items": [
+      {
+        "productId": "3001032",
+        "name": "Imersão Código ZERO Premium",
+        "parentId": null,
+        "refundPeriod": { "durationType": "days", "value": 7 },
+        "price": { "currency": "BRL", "value": 414, "coupon": null },
+        "coupon": null,
+        "partnerId": null,
+        "billingType": "single",
+        "skuReference": null
+      }
+    ],
+    "totalItems": 1,
+    "billetUrl": "https://sun.eduzz.com/c_93bae26a78da4bb3ab838e7dc855ef58",
+    "checkoutUrl": "https://sun.eduzz.com/D0R8EN5B9Y",
+    "bankslipUrl": null,
+    "barcode": null,
+    "postback": null,
+    "paymentMethod": "pix",
+    "contract": null,
+    "payment": { "method": "pix", "details": "pix" },
+    "saleRecoveryUrl": "https://edz.la/r/148273575f58/98623441?t=15"
+  }
+}

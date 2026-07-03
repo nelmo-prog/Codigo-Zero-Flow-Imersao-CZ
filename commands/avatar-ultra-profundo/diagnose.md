@@ -8,7 +8,7 @@ Coleta inputs obrigatórios antes de rodar o squad.
 
 ## Fluxo
 
-Ative o agente `@avatar-chief` do squad em `C:\Users\Ryzen 7\nelmo-workspace-projetos-claude-code\21-Flow-Imersao-Codigo-Zero\squads\avatar-ultra-profundo\`.
+Ative o agente `@avatar-chief` do squad em `~/.claude/squads/codigo-zero/avatar-ultra-profundo\`.
 
 Execute o comando interno `*diagnose` dele, que roda a task `tasks/avatar-diagnose-input.md`.
 
@@ -28,7 +28,7 @@ Execute o comando interno `*diagnose` dele, que roda a task `tasks/avatar-diagno
 
 ## Saída
 
-Arquivo `C:\Users\Ryzen 7\lancamentos\{projeto}\02-avatar\INPUT-AVATAR.md` com os 11 campos preenchidos.
+Arquivo `~/lancamentos/{projeto}\02-avatar\INPUT-AVATAR.md` com os 11 campos preenchidos.
 
 ## Regras
 - Se faltar informação, o agente deve assumir hipóteses plausíveis E sinalizar "HIPÓTESE:" (nunca tratar como fato)

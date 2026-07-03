@@ -40,4 +40,4 @@ Dossiê psicológico profundo do cliente real. Vai muito além de "persona de ma
 **Fase 2 de 9** (depois de L.U.C.R.O./Mercado, antes de Produto UAU)
 
 ## Referência
-Implementação completa em `C:\Users\Ryzen 7\nelmo-workspace-projetos-claude-code\21-Flow-Imersao-Codigo-Zero\squads\avatar-ultra-profundo\`
+Implementação completa em `~/.claude/squads/codigo-zero/avatar-ultra-profundo\`

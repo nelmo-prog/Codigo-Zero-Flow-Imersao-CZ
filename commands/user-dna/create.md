@@ -9,7 +9,7 @@ Ativa o agente Espelho (Entrevistador Profundo) pra conduzir entrevista de 20-30
 ## Antes de começar
 
 Leia os 8 módulos de conhecimento em:
-`C:\Users\Ryzen 7\nelmo-workspace-projetos-claude-code\21-Flow-Imersao-Codigo-Zero\squads\user-dna\knowledge\`
+`~/.claude/squads/codigo-zero/user-dna\knowledge\`
 
 Internalize o algoritmo adaptativo, o banco de perguntas, o sistema de análise em 4 camadas, e os frameworks de personalidade.
 

@@ -1,5 +1,5 @@
 # Instalador Código ZERO Skills (Windows PowerShell)
-# Uso: iwr -useb https://raw.githubusercontent.com/nelmo-prog/codigo-zero-skills/main/install.ps1 | iex
+# Uso: iwr -useb https://raw.githubusercontent.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ/master/install.ps1 | iex
 
 $ErrorActionPreference = "Stop"
 
@@ -9,8 +9,8 @@ Write-Host ""
 Write-Host "11 equipes de IA instaladas na sua máquina em 1 comando."
 Write-Host ""
 
-$repoUrl = "https://github.com/nelmo-prog/codigo-zero-skills.git"
-$tempDir = Join-Path $env:TEMP "codigo-zero-skills-install"
+$repoUrl = "https://github.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ.git"
+$tempDir = Join-Path $env:TEMP "Codigo-Zero-Flow-Imersao-CZ-install"
 $claudeDir = Join-Path $env:USERPROFILE ".claude"
 
 # Verificar Claude Code

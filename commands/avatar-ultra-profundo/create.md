@@ -4,7 +4,7 @@ description: Cria dossiê ultra-profundo do avatar (14 blocos, 50 camadas, 10 su
 
 # Avatar Ultra Profundo, Create
 
-Roda o workflow completo `wf-avatar-from-zero.yaml` do squad em `C:\Users\Ryzen 7\nelmo-workspace-projetos-claude-code\21-Flow-Imersao-Codigo-Zero\squads\avatar-ultra-profundo\`.
+Roda o workflow completo `wf-avatar-from-zero.yaml` do squad em `~/.claude/squads/codigo-zero/avatar-ultra-profundo\`.
 
 ## Pré-requisito
 `/avatar-ultra-profundo:diagnose` deve ter rodado antes (input salvo em `02-avatar/INPUT-AVATAR.md`).
@@ -23,7 +23,7 @@ Ative `@avatar-chief` com comando interno `*create`. Ele orquestra os 7 agentes 
 - **Hormozi**: Blocos 7, 8, 13 (Autossabotagem, Objeções, Subcamadas)
 - **Chief**: Bloco 12 (50 Camadas obrigatórias, síntese)
 
-## Saídas (em `C:\Users\Ryzen 7\lancamentos\{projeto}\02-avatar\`)
+## Saídas (em `~/lancamentos/{projeto}\02-avatar\`)
 
 1. `DOSSIE-COMPLETO.md` — 14 blocos completos
 2. `50-CAMADAS.md` — detalhamento das 50 camadas obrigatórias (Bloco 12)

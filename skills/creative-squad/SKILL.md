@@ -1,102 +1,58 @@
 ---
 name: creative-squad
-description: "Squad de criacao de criativos com IA. Gera imagens profissionais usando Gemini (Nano Banana Pro/2) com consistencia de personagem via fotos de referencia. 8 tipos de criativos: pergunta, headline, cta, headline-cta, pergunta-cta, quote, quote-cta, clean. Extrai conteudo de URLs, HTMLs locais, PDFs ou texto colado. Actions: criar, gerar, extrair, batch. Topics: criativo, imagem, Instagram, Story, feed, CTA, pergunta, resposta, caixa de pergunta, Gemini, referencia, cenario, overlay, carrossel, headline, quote."
+description: "Squad de criação de criativos com IA. Fase 5 do Código ZERO Flow. Gera imagens profissionais com consistência de personagem via fotos de referência do usuário. 2 modos: geração direta via API (Gemini Nano Banana Pro/Flash ou OpenAI GPT Image) ou modo manual gratuito (entrega prompts prontos, usuário gera no app do Gemini/ChatGPT e sobe as imagens). Actions: criar, gerar, extrair, batch, prompts. Topics: criativo, imagem, Instagram, Story, feed, CTA, headline, quote, referência, cenário, overlay, moodboard."
 ---
 
-# Creative Squad - Gerador de Criativos com IA
+# Creative Squad, Gerador de Criativos com IA
 
-Squad de agentes para criacao de criativos profissionais usando Gemini (Nano Banana Pro) com consistencia de personagem.
+Cria os assets visuais do lançamento com consistência de personagem (o rosto do usuário, sempre o mesmo, em cenários variados).
 
-## Quando Ativar
+**Fase 5 do Código ZERO Flow.** Consome (cadeia alimentar): `02-avatar/RESUMO-SCALE.md` + `LINGUAGEM-CRUA.md`, `04-oferta/OFERTA-COMPLETA.md`. Gera em `05-criativos/`: `MOODBOARD.md`, `PROMPTS-IMAGENS.md`, `TEMPLATES-POSTS.md`, `SCRIPTS-REELS.md`, `HEADLINES-CTAS.md` e (opcional) as imagens em `05-criativos/imagens/`.
 
-Ativar quando o usuario pedir para:
-- Criar criativos / imagens para Instagram (feed, story, reels)
-- Gerar imagens com texto, perguntas, respostas, CTAs ou quotes
-- Criar conteudo visual a partir de uma LP, PDF, HTML ou texto
-- Gerar batch de criativos de uma vez
+---
 
-## Setup
+## Os 2 modos (perguntar ANTES de gerar qualquer imagem)
 
-**Fotos de referencia:** `C:\Users\Ryzen 7\creative-squad\references\`
-**Output:** `C:\Users\Ryzen 7\creative-squad\output\`
-**Scripts:** `C:\Users\Ryzen 7\creative-squad\`
+### MODO A, Geração direta via API
+Se o usuário tem chave de API:
+- **Gemini** (`GEMINI_API_KEY`): Nano Banana Pro `gemini-3-pro-image-preview` (melhor qualidade, ~$0.13/img) ou Flash `gemini-3.1-flash-image-preview` (~$0.045/img). Dá pra criar chave em https://aistudio.google.com (tem camada gratuita)
+- **OpenAI** (`OPENAI_API_KEY`): GPT Image (exige cartão cadastrado)
+Gerar as imagens direto e salvar em `lancamentos/{projeto}/05-criativos/imagens/`, organizadas por categoria (`01-hero/`, `02-processo/`, `03-provas/`, `04-ads/`).
 
-## 8 Tipos de Criativos
+### MODO B, Manual gratuito (padrão pra quem não tem chave)
+1. Gerar `PROMPTS-IMAGENS.md` com 15-25 prompts COMPLETOS e numerados (cenário, roupa, pose, iluminação, formato, instrução de anexar a foto de referência)
+2. Instruir o usuário: abrir o app/site do Gemini ou do ChatGPT (versão gratuita serve), anexar a foto de referência, colar o prompt, baixar a imagem
+3. Usuário salva as imagens em `lancamentos/{projeto}/05-criativos/imagens/` com o número do prompt no nome (ex: `07-escritorio-camisa-azul.jpg`)
+4. As fases 6 (LP) e 7 (Meta Ads) vão consumir essa pasta
 
-| Tipo | Descricao | Parametros |
-|---|---|---|
-| `pergunta` | Caixa pergunta + resposta estilo IG Story (branca, pixel-perfect via Pillow) | question, answer |
-| `headline` | Frase de impacto com fundo semi-transparente escuro | headline |
-| `cta` | Botao call-to-action cyan na parte inferior | cta |
-| `headline-cta` | Headline em cima + CTA embaixo | headline, cta |
-| `pergunta-cta` | Caixa pergunta/resposta + CTA embaixo | question, answer, cta |
-| `quote` | Citacao com aspas estilizadas | quote, quote_author |
-| `quote-cta` | Citacao + CTA embaixo | quote, quote_author, cta |
-| `clean` | So a foto sem overlay | nenhum |
+Em AMBOS os modos: pedir 3-5 fotos de referência nítidas do usuário e salvar em `05-criativos/referencias/` antes de qualquer geração.
 
-## Fluxo de Execucao (OBRIGATORIO)
+---
 
-### Passo 1: Entender o pedido
-- Quantos criativos? Qual tipo?
-- Formato? (story 9:16, feed 4:5, square 1:1)
-- Fonte de conteudo? (URL, HTML local, PDF, texto)
-- Cenarios desejados?
+## Tipos de criativo
 
-### Passo 2: Extrair conteudo (se houver fonte)
-```python
-from extract_content import extract
-content = extract("url_ou_caminho_ou_texto")
-```
-Suporta: URLs, arquivos HTML locais, PDFs, texto direto.
+| Tipo | Descrição |
+|---|---|
+| `hero` | Foto principal da LP (retrato profissional, olhar pra câmera) |
+| `pergunta` | Caixa pergunta + resposta estilo IG Story |
+| `headline` | Frase de impacto com fundo escuro semi-transparente |
+| `cta` | Botão call-to-action na parte inferior |
+| `quote` | Citação com aspas estilizadas |
+| `prova` | Cenário de resultado/bastidor (mesa de trabalho, tela, processo) |
+| `clean` | Só a foto, sem overlay (base pra ads) |
 
-A partir do conteudo extraido, CRIAR perguntas na perspectiva do LEAD/USUARIO que visita a pagina.
-Pensar como empresario 40+ que nao sabe programar mas quer autonomia.
-Perguntas devem mirar dores ocultas e urgencias reais, NAO perguntas retoricas de copy.
+## Fluxo de execução
 
-### Passo 3: Gerar foto limpa (sem texto)
-```python
-from generate_creative import generate_creative
-path = generate_creative(
-    scene="descricao do cenario",
-    aspect_ratio="story",
-    output_name="nome",
-    # consistency_anchor usa DEFAULT do config (oculos, mesmo rosto)
-)
-```
+1. **Entender o pedido:** quantos criativos, tipos, formatos (story 9:16, feed 4:5, square 1:1), fonte de conteúdo (LP, oferta, texto)
+2. **Extrair conteúdo:** da OFERTA-COMPLETA.md e da LINGUAGEM-CRUA.md. Perguntas e headlines na perspectiva do LEAD, mirando dores ocultas reais, não perguntas retóricas de copy
+3. **Moodboard primeiro:** paleta, tipografia e direção visual em `MOODBOARD.md`, aprovar com o usuário
+4. **Gerar (modo A) ou entregar prompts (modo B)**
+5. **Conferir:** mostrar tabela do que foi gerado/pendente antes de encerrar
 
-**Cenarios padrao:** Escritorios modernos corporativos.
-**Roupa padrao:** Camisa social (branca, preta, verde militar, azul marinho, marrom), mangas dobradas, para fora da calca.
-**SEMPRE variar** cor da camisa e cenario entre criativos.
+## Regras
 
-### Passo 4: Aplicar overlay via Pillow
-```python
-from overlay import apply_overlay
-final = apply_overlay(
-    image_path="output/nome.jpg",
-    creative_type="pergunta",   # ou headline, cta, etc
-    question="texto",
-    answer="texto",
-    cta="TEXTO DO BOTAO",
-    headline="texto",
-    quote="texto",
-    quote_author="nome",
-)
-```
-
-### Passo 5: Entregar
-Informar caminhos dos arquivos em creative-squad/output/ e abrir a pasta.
-
-## Modelos Gemini
-
-| Modelo | ID | Uso |
-|---|---|---|
-| Nano Banana Pro | gemini-3-pro-image-preview | Padrao, melhor qualidade |
-| Nano Banana 2 | gemini-3.1-flash-image-preview | Mais rapido, mais barato |
-
-## Importante
-
-- Cada geracao de imagem tem custo (~$0.13 Pro, ~$0.045 Flash)
-- NAO gerar imagens desnecessarias, confirmar com usuario antes de batch grande
-- O overlay (Pillow) nao tem custo, so a geracao da foto base no Gemini
-- Para testar perguntas/respostas, mostrar em TABELA antes de gerar imagens
-- Abordagem HIBRIDA: Gemini gera foto limpa, Pillow adiciona textos pixel-perfect
+- SEMPRE variar cenário e cor de roupa entre criativos, MANTENDO o âncora de consistência (mesmo rosto, mesmos acessórios característicos do usuário)
+- Texto de overlay NUNCA sobre o rosto
+- Confirmar com o usuário antes de batch grande (custo em modo A)
+- Ortografia PT-BR impecável em qualquer texto de imagem, NUNCA travessão (—)
+- Formato 1:1 pra Feed, 9:16 pra Stories/Reels, 4:5 pra feed retrato

@@ -36,7 +36,7 @@ Extrai a essência de quem é o expert/empresário antes de qualquer outra fase.
 
 ## Metodologia (8 módulos internos)
 Base de conhecimento completa em:
-`C:\Users\Ryzen 7\nelmo-workspace-projetos-claude-code\21-Flow-Imersao-Codigo-Zero\squads\user-dna\knowledge\`
+`~/.claude/squads/codigo-zero/user-dna\knowledge\`
 
 - `01_question_bank_nelmo.md` — Banco de perguntas por domínio (3 níveis: fundamentais, aprofundamento, sondas paradoxais)
 - `02_selection_algorithm_nelmo.md` — Algoritmo adaptativo de priorização: P = (100 - Cobertura) * 0.6 + Relevância_Emocional * 0.3 + Fator_Novidade * 0.1
@@ -73,4 +73,4 @@ USER-DNA.md → Helena (L.U.C.R.O., contextualiza diagnóstico)
 ```
 
 ## Referência
-Implementação em `C:\Users\Ryzen 7\nelmo-workspace-projetos-claude-code\21-Flow-Imersao-Codigo-Zero\squads\user-dna\`
+Implementação em `~/.claude/squads/codigo-zero/user-dna\`
