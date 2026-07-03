@@ -20,6 +20,18 @@ curl -fsSL https://raw.githubusercontent.com/nelmo-prog/Codigo-Zero-Flow-Imersao
 iwr -useb https://raw.githubusercontent.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ/master/install.ps1 | iex
 ```
 
+### Pelo próprio Claude Code (recomendado pra quem não gosta de terminal)
+
+Abra o Claude Code e cole esta mensagem:
+
+```
+Clone o repositório público https://github.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ.git
+pra uma pasta chamada "Imersao-Codigo-Zero" na minha pasta de usuário,
+rode "node install.js" dentro dela e me confirme quantas skills foram instaladas.
+```
+
+Não precisa de conta GitHub nem de MCP: o repositório é público e o Claude Code usa o git do seu computador. Depois é só reiniciar o Claude Code e digitar `/codigo-zero-flow`.
+
 ### Manual (qualquer sistema)
 
 ```bash
