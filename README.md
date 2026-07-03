@@ -25,14 +25,17 @@ iwr -useb https://raw.githubusercontent.com/nelmo-prog/Codigo-Zero-Flow-Imersao-
 Abra o Claude Code e cole esta mensagem:
 
 ```
-Clone o repositório público https://github.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ.git
-pra uma pasta chamada "Imersao-Codigo-Zero" na minha pasta de usuário,
-rode "node install.js" dentro dela e me confirme quantas skills foram instaladas.
+Baixe o repositório público https://github.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ
+pra uma pasta chamada "Imersao-Codigo-Zero" na minha pasta de usuário
+(use git clone se houver git, senão baixe o zip de archive/refs/heads/master.zip e extraia).
+Depois instale copiando o CONTEÚDO das pastas: skills/ pra ~/.claude/skills/,
+commands/ pra ~/.claude/commands/ e squads/ pra ~/.claude/squads/codigo-zero/.
+Me confirme quantas skills foram instaladas.
 ```
 
-Não precisa de conta GitHub nem de MCP: o repositório é público e o Claude Code usa o git do seu computador. Depois é só reiniciar o Claude Code e digitar `/codigo-zero-flow`.
+Não precisa de conta GitHub, de MCP, de Git nem de Node.js: o repositório é público e o Claude faz a cópia sozinho. Depois é só reiniciar o Claude Code e digitar `/codigo-zero-flow`.
 
-### Manual (qualquer sistema)
+### Manual com Git + Node (opcional, pra quem já tem)
 
 ```bash
 git clone https://github.com/nelmo-prog/Codigo-Zero-Flow-Imersao-CZ.git
@@ -44,9 +47,9 @@ node install.js
 
 ## 📋 Pré-requisitos
 
-1. **Claude Code instalado**, https://claude.com/download
-2. **Node.js 18+**, https://nodejs.org
-3. **Git**, https://git-scm.com
+**Pra instalar as skills:** só o **Claude Code** (https://claude.com/download). Os instaladores baixam o pacote direto do GitHub e copiam as pastas, sem Node.js e sem Git.
+
+**Pra fase de publicação da LP (mais tarde):** Node.js 18+ (https://nodejs.org), Git (https://git-scm.com) e conta no GitHub. Instale com calma quando chegar lá, ou antes, seguindo o guia da imersão.
 
 ---
 
