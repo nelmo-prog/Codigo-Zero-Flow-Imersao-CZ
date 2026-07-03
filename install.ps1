@@ -24,8 +24,8 @@ if (-not (Test-Path $claudeDir)) {
 Write-Host "Pasta Claude Code encontrada: $claudeDir" -ForegroundColor Green
 
 # Limpar restos de instalação anterior
-if (Test-Path $tempDir) { Remove-Item -Recurse -Force $tempDir }
-if (Test-Path $zipPath) { Remove-Item -Force $zipPath }
+if (Test-Path -LiteralPath $tempDir) { try { Remove-Item -LiteralPath $tempDir -Recurse -Force -ErrorAction Stop } catch {} }
+if (Test-Path -LiteralPath $zipPath) { try { Remove-Item -LiteralPath $zipPath -Force -ErrorAction Stop } catch {} }
 
 Write-Host "Baixando pacote..." -ForegroundColor Yellow
 Invoke-WebRequest -UseBasicParsing -Uri $zipUrl -OutFile $zipPath
@@ -56,9 +56,9 @@ $cmds = Copy-Bundle "commands" (Join-Path $claudeDir "commands")
 Write-Host "`nInstalando squads (agentes)..." -ForegroundColor Yellow
 $squads = Copy-Bundle "squads" (Join-Path $claudeDir "squads\codigo-zero")
 
-# Limpar temporários
-Remove-Item -Recurse -Force $tempDir
-Remove-Item -Force $zipPath
+# Limpar temporários (falha aqui não pode derrubar a instalação)
+try { Remove-Item -LiteralPath $tempDir -Recurse -Force -ErrorAction Stop } catch {}
+try { Remove-Item -LiteralPath $zipPath -Force -ErrorAction Stop } catch {}
 
 Write-Host ""
 Write-Host "=== INSTALAÇÃO CONCLUÍDA ===" -ForegroundColor Blue
